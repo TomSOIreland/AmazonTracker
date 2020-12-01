@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 DIRECTORY = 'reports'
-NAME = 'PS5 console'
+NAME = 'PS5'
 CURRENCY = '€'
 MIN_PRICE = '27500'
 MAX_PRICE = '65000'
@@ -9,7 +9,7 @@ FILTERS = {
     'min': MIN_PRICE,
     'max': MAX_PRICE
 }
-BASE_URL = 'https://amazon.co.uk'
+BASE_URL = 'https://www.amazon.co.uk/dp/B08H95Y452'
 
 
 def get_chrome_web_driver(options):
