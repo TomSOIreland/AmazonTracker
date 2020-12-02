@@ -6,9 +6,17 @@ from selenium.webdriver.chrome.options import Options
 
 BASE_URL = 'https://www.smythstoys.com/ie/en-ie/video-games-and-tablets/playstation-5/playstation-5-consoles/playstation-5-console/p/191259'
 
-options = Options()
-options.page_load_strategy = 'normal'
-driver = webdriver.Chrome(options=options)
+
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+
+
+# options = Options()
+# options.page_load_strategy = 'normal'
+driver = webdriver.Chrome(chrome_options=chrome_options)
+# driver = webdriver.Firefox()
 
 sender = 'tmalkiewicz@gmail.com'
 receiver = 'tmalkiewicz@gmx.com,tmalkiewicz@gmail.com'
