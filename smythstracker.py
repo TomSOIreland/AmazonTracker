@@ -23,10 +23,11 @@ def trackAvailability():
     print(str1)
     if str1 != "Out":
         print(f"{get_title()} is {availability}, {str1}")
-        sendMail()
+        sendMailYes()
 
     else:
         print(f"{get_title()} is {availability}")
+        sendMailNo()
 
 
 def get_availability():
@@ -48,7 +49,28 @@ def get_title():
         return None
 
 
-def sendMail():
+def sendMailYes():
+    subject = f'{get_title()} - Smyths Status'
+    message = f"""From: {sender}
+To: {receiver}
+MIME-Version: 1.0
+Content-type: text/html
+Subject: {get_title()} - Smyths Status'
+
+
+<b>{get_title()}</b> is {get_availability()}
+<p>{BASE_URL}</p>
+"""
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.ehlo()
+    server.starttls()
+    server.ehlo()
+    server.login(sender, 'vojyzhkwcxwpuyzi')
+    server.sendmail(sender, receiver, message)
+    pass
+
+
+def sendMailNo():
     subject = f'{get_title()} - Smyths Status'
     message = f"""From: {sender}
 To: {receiver}
