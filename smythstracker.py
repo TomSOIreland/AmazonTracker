@@ -50,7 +50,7 @@ def get_title():
 
 
 def sendMailYes():
-    subject = f'{get_title()} - Smyths Status'
+    subject = f'{get_availability()} - {get_title()} - Smyths Status'
     message = f"""From: {sender}
 To: {receiver}
 MIME-Version: 1.0
@@ -71,7 +71,7 @@ Subject: {get_title()} - Smyths Status'
 
 
 def sendMailNo():
-    subject = f'{get_title()} - Smyths Status'
+    subject = f'{get_availability()} - {get_title()} - Smyths Status'
     message = f"""From: {sender}
 To: {receiver}
 MIME-Version: 1.0
