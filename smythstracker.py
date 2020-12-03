@@ -11,13 +11,7 @@ chrome_options = Options()
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
-
-
-# options = Options()
-# options.page_load_strategy = 'normal'
 driver = webdriver.Chrome(chrome_options=chrome_options)
-# driver = webdriver.Firefox()
-
 sender = 'tmalkiewicz@gmail.com'
 receiver = 'tmalkiewicz@gmx.com,tmalkiewicz@gmail.com'
 
@@ -33,7 +27,6 @@ def trackAvailability():
 
     else:
         print(f"{get_title()} is {availability}")
-
 
 
 def get_availability():
@@ -53,11 +46,6 @@ def get_title():
     except Exception as e:
         print(e)
         return None
-
-def run():
-    driver.get(BASE_URL)
-    time.sleep(2)
-    driver.quit()
 
 
 def sendMail():

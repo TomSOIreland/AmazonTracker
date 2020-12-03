@@ -17,6 +17,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 title = soup.find('span', {'id': 'productTitle'}).get_text().strip()
 availability = soup.find('div', {'id': 'availability'}).find('span').get_text().strip()
 
+
 def trackAvailability():
     availability = getAvailability()
     print(availability)
